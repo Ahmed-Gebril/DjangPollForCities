@@ -1,0 +1,9 @@
+include LICENSE
+include README.rst
+recursive-include polls/static *
+recursive-include polls/templates *
+recursive-include pages/static *
+recursive-include pages/templates *
+recursive-include cities/static *
+recursive-include cities/templates *
+recursive-include docs *

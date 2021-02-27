@@ -1,0 +1,46 @@
+{% extends 'base.html' %} 
+{% block content %} 
+<style>
+  .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr ;
+  grid-gap: 20px;
+}
+  .container div {
+  aspect-ratio: 1 / 1;
+}
+
+
+  img {
+    height: 300px;
+    width: 300px;
+  }
+  </style>
+  <h1 style="text-align: center"> Read More About </h1>
+
+  <div class = "container">
+  <div >
+      <a href= "https://www.myhelsinki.fi/en/your-local-guide-to-helsinki"> <img src="https://upload.wikimedia.org/wikipedia/commons/3/36/Helsinki_July_2013-27a.jpg" copyright= "wikimedia"  ></a>
+      <h4>Helsinki</h2> 
+  </div>
+  <div >
+    <a href= "https://www.tampere.fi/"> <img src="https://media.radissonhotels.net/image/destination-pages/localattraction/16256-118729-f63224434_3xl.jpg?impolicy=HomeHero"  ></a>
+    <h4>Tampere</h2> 
+</div>
+<div  >
+  <a href= "https://www.ouka.fi/oulu/english"> <img src="https://www.orangesmile.com/common/img_cities_original/oulu--1379888-3.jpg"  ></a>
+  <h4>Oulu</h2> 
+</div>
+<div >
+  <a href= "https://www.turku.fi/en"> <img src="https://media.sitra.fi/2019/10/11164902/istock-1168130395.jpg"  ></a>
+  <h4>Turku</h2> 
+</div>
+<div >
+  <a href= "https://www.vaasa.fi/en/"> <img src="https://vamia.fi/wp-content/uploads/2019/11/Syksy-ilmasta_3_Mikael-Matikainen-2016-medium-300x169.jpg"  ></a>
+  <h4>Vaasa</h2> 
+</div>
+ 
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<style>
+/*   img {  
+display: block;  
+margin-left: -7em; 
+max-width: 200px; 
+margin-right: auto;  
+border: 8px ridge blue;  
+padding: 5px;  
+}; */
+
+div{
+
+  height: 2300;
+  width: 2300;
+  text-align: center;
+
+}
+
+</style>
+
+
+<div  >
+
+    <h1 > Vote For Your Favourite City In Finalnd </h1>
+
+
+    <a  style ="text-align: center;" class="btn btn-dark" href="{% url 'polls:index' %}">
+        Vote Now</a>
+ 
+
+    <img  style="float: left; margin-left: -13em;max-width: 1000px; max-height: 1000px;"  src="https://mk0scandificati6sq08.kinstacdn.com/wp-content/uploads/2020/06/Living-in-Finland-1-scaled.jpg" />
+
+
+</div>
+{% endblock %}

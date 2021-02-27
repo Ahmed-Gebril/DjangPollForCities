@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<script src="https://cdn.zingchart.com/zingchart.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<h1 class="mb-5 text-center">{{ question.question_text }}</h1>
+
+<ul class="list-group mb-5">
+	{% for choice in question.choice_set.all %}
+	<li class="list-group-item">
+		{{ choice.choice_text }}  <span class="badge badge-success float-right">{{ choice.votes }} vote{{ choice.votes | pluralize }}</span>
+	</li>
+	{% endfor %}
+</ul>
+
+<div id = "myChart"></div>
+<button  class="btn btn-dark" onclick=load()>Display Votes Chart</button>
+
+<a class="btn btn-secondary" href="{% url 'polls:index' %}">Back To Polls</a>
+<a class="btn btn-dark" href="{% url 'polls:detail' question.id %}">Vote again?</a>
+
+<script>
+
+
+async function load () {
+	var objId = "{{question.id}}"
+    let url = 'http://localhost:8000/api/polls/questions/'+objId+'/result';
+    let votesData = await (await fetch(url)).json();
+	console.log(votesData);
+	var question_choices = votesData.choices;
+	var question_options = [];
+	var actualVotes = [];
+
+	console.log(question_choices);
+	for( i =0 ;i< question_choices.length; i++){
+		question_options.push(question_choices[i].choice_text)
+	}
+	console.log(question_options);
+	for( i =0 ;i< question_choices.length; i++){
+		actualVotes.push(question_choices[i].votes)
+	}
+
+
+
+	var chartData = {
+		"type": "bar",
+		"scale-x":{
+			"values": question_options
+		},
+		"series": [{
+				"values": actualVotes
+			}
+
+		]
+	}
+	zingchart.render({
+		id : "myChart",
+		data: chartData
+
+	})
+
+
+};
+
+
+
+
+
+</script>
+
+
+{% endblock %}

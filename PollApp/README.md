@@ -37,7 +37,7 @@ Running as a python package on a skeleton Django App
 ```
 - Follow instructions on README.rst
 - add include to "from django.urls import  path" as "from django.urls import include, path"
-- cd pollApp/pollster
+- cd pollApp
 # install the package with 
 - python -m pip install  django_polls_for_cities-0.1-py3-none-any.whl
 - - run your skeleton App

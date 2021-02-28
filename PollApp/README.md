@@ -1,4 +1,4 @@
-# Pollster App (Django Crash Course)
+# Polling App for Finnish Cities
 
 > Python Django app to poll on Favourite City in Finland
 
